@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./node_modules/bulma/css/bulma.css" />
+	</head>
+	<body>
+		<div class="columns my-6 mx-6">
+			<div class="column is-6 is-offset-3">
+				<div id="inputBox" class="box">
+					<p class="is-size-6 mb-2">Paste the link here</p>
+					<input
+						type="text"
+						placeholder="https://my-link.com"
+						class="input"
+						v-model="input"
+					/>
+					<button
+						v-on:click="generate()"
+						class="button mt-4 is-fullwidth is-info has-text-centered"
+						:disabled="loader"
+					>
+						generate
+					</button>
+					<iframe
+						id="generateFrame"
+						ref="generateFrame"
+						src=""
+						style="display: none"
+					></iframe>
+				</div>
+			</div>
+		</div>
+		<script src="./html2pdf.js-master/dist/html2pdf.bundle.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="./app.js"></script>
+	</body>
+</html>
