@@ -9,7 +9,11 @@
 	<body>
 		<div class="columns my-6 mx-6">
 			<div class="column is-6 is-offset-3">
-				<div id="inputBox" class="box">
+				<div
+					id="inputBox"
+					class="box"
+					:style="{'cursor' : loader ? 'wait' : ''}"
+				>
 					<p class="is-size-6 mb-2">Paste the link here</p>
 					<input
 						type="text"
