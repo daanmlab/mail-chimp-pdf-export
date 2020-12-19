@@ -10,7 +10,7 @@ var app = new Vue({
     methods: {
         generate: async function () {
             this.loader = true;
-            fetch(`http://localhost:4000/getLink.php`, {
+            fetch(`ajax/getLink.php`, {
                 method: 'POST',
                 body: JSON.stringify({
                     link: this.input
@@ -26,7 +26,7 @@ var app = new Vue({
                 let images = newsLetter.querySelectorAll('img')
 
                 for (const image of images) {
-                    let response = await fetch(`http://localhost:4000/getImage.php`, {
+                    let response = await fetch(`ajax/getImage.php`, {
                         method: 'POST',
                         body: JSON.stringify({
                             link: image.src
